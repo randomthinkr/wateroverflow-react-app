@@ -15,6 +15,11 @@ form and the Water Level for the specified row and column is displayed at the bo
 
 <img width="983" alt="image" src="https://user-images.githubusercontent.com/15522344/167264767-a2591f71-4b43-4282-8a60-b111ec166179.png">
 
+# The Source Package Structure
+3 Simple components, namely: Form, Glass Stack, and the Glass card components were created
+
+![img.png](img.png)
+
 # The Techstack
 1. React Js
 2. Bootstrap for simple styling

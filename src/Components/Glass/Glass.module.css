@@ -1,0 +1,20 @@
+.glassStack {
+    width: 95%;
+    max-width: 800px;
+    padding: 15px;
+    margin: 180px 10px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.imgHeight {
+    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }

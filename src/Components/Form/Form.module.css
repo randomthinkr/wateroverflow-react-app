@@ -1,0 +1,15 @@
+
+.form {
+    width: 80%;
+    max-width: 350px;
+    padding: 15px;
+    margin: 0 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.grid {
+    width: 80%;
+    display: block;
+}
