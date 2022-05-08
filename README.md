@@ -18,7 +18,11 @@ form and the Water Level for the specified row and column is displayed at the bo
 # The Source Package Structure
 3 Simple components, namely: Form, Glass Stack, and the Glass card components were created
 
-![img.png](img.png)
+![](readme_assets/code_structure.png)
+
+Here is the part which calls the Wateroverflow API
+
+![](readme_assets/calling_api.png)
 
 # The Techstack
 1. React Js
