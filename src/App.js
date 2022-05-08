@@ -7,7 +7,7 @@ const App = (props) => {
 
 const [params, setParams] = useState()
 const [searchResult, setSearchResult] = useState()
-const [isVisible, setVisible] = useState()
+const [isGlassStackVisible, setGlassStackVisible] = useState()
 
   const searchCriteria = (search) => {
     setParams({
@@ -21,14 +21,16 @@ const [isVisible, setVisible] = useState()
   };
 
   const handleSearch = async (event) => {
-    setVisible(false)
+    setGlassStackVisible(false)
     const fetchData = async () => {
        
-        const response = await fetch('http://localhost:8080/api/v1/waterflow/stack?rows='+ params.rows + '&capacity='+ params.capacity+'&millilitersOfWater='+params.water+'')
+        const response = await fetch('http://localhost:8080/api/v1/waterflow/stack?rows='+ params.rows 
+                    + '&capacity='+ params.capacity+'&millilitersOfWater='+params.water+'')
         
         const glassStackData = await response.json()
 
-        const waterLevelResponse = await fetch('http://localhost:8080/api/v1/waterflow/waterLevel?rows='+ params.rows + '&row='+ params.row+'&column='+params.column+'&capacity='+ params.capacity+'&millilitersOfWater='+params.water+'')
+        const waterLevelResponse = await fetch('http://localhost:8080/api/v1/waterflow/waterLevel?rows='+ params.rows 
+                    + '&row='+ params.row+'&column='+params.column+'&capacity='+ params.capacity+'&millilitersOfWater='+params.water+'')
         
         const waterLevel = await waterLevelResponse.json()
         
@@ -36,7 +38,7 @@ const [isVisible, setVisible] = useState()
           ...glassStackData,
           waterLevel: waterLevel
         })
-        setVisible(true)
+        setGlassStackVisible(true)
     }
     fetchData()
    
@@ -50,7 +52,7 @@ const [isVisible, setVisible] = useState()
           <Form searchCriteria={searchCriteria} handleSearch={handleSearch}/>
         </div>
         <div className='col-8'>
-          { isVisible &&
+          { isGlassStackVisible &&
           <GlassStack searchResult = {searchResult}/>
          }
         </div>
