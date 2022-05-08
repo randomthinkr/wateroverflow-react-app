@@ -1,6 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import {Card, Row, Col, Container } from "react-bootstrap";
-import { If, Then, ElseIf, Else } from 'react-if-elseif-else-render';
 import emptyGlass from '../../images/emptyGlass.png';
 import filledGlass from '../../images/filledGlass.png';
 import less50Glass from '../../images/less50Glass.png';
@@ -23,7 +22,7 @@ const GlassStack = (props) => {
             for(let j = 0; j < rowCount; j++) {
                 const glass = {
                     waterLevel: -1,
-                    img: 'w'
+                    img: null
                 }
                 rowGlasses.push(glass)
             }
@@ -33,16 +32,16 @@ const GlassStack = (props) => {
                 const cap = parseFloat(glassItems[i][j].capacity).toFixed(2)
                 const halfOfCap = parseFloat(cap / 2).toFixed(2);
                
-                let img = 'e'
+                let img = emptyGlass
                 
                 if(wl === cap) {
-                    img = 'f'
+                    img = filledGlass
                 } 
                 else if(parseFloat(wl) < parseFloat(halfOfCap) && wl != 0.00) {
-                    img = 'l'
+                    img = less50Glass
                 }
                 else if(wl > halfOfCap) {
-                    img = 'g'
+                    img = over50Glass
                 }
                
                 const glass = {
@@ -78,25 +77,14 @@ const GlassStack = (props) => {
                     {glassStack.map((row, r) => (
                         <Row  key={r}>
                             {row.map((glass, c) => (
-                               
                                 <Col key={r+c} className='col-2' sm={2} md={2} lg={2} className={styles.nopadding}>
-                                    <If condition={glass.glassImage === 'f'}>
-                                        <Then>
-                                          <Glass glassImage={filledGlass} waterLevel={glass.waterLevel} />
-                                        </Then>
-                                        <ElseIf condition={glass.glassImage === 'g'}>
-                                            <Glass glassImage={over50Glass} waterLevel={glass.waterLevel} />
-                                        </ElseIf>
-                                        <ElseIf condition={glass.glassImage === 'l'}>
-                                            <Glass glassImage={less50Glass} waterLevel={glass.waterLevel} />
-                                        </ElseIf>
-                                        <ElseIf condition={glass.glassImage === 'e'}>
-                                            <Glass glassImage={emptyGlass} waterLevel={glass.waterLevel} />
-                                        </ElseIf>
-                                        <Else>
-                                         <Card></Card>
-                                        </Else>
-                                    </If>
+                                    {
+                                        glass.waterLevel != -1 ?
+                                        <Glass glassImage={glass.glassImage} waterLevel={glass.waterLevel} />
+                                        :
+                                        <Card></Card>
+                                    }
+                                    
                                 </Col>
                                  ))}
                         </Row>
