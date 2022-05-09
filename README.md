@@ -40,5 +40,5 @@ Here is the part which calls the Wateroverflow API
 3. The purpose of the application is to be able to call the two end points for the Waterflow RESTful API which can be downloaed
    and should be run prior to running this front-end application.
    The GitHub repository for the API is here -> https://github.com/randomthinkr/wateroverflow
-4. Did not include validation of input values
+4. Did not include validation of input values. I will add after submission for future public use.
    
