@@ -13,7 +13,7 @@ When the page initially loads, we only see the form visible
 After specifying some values for the wateroverflow simulation and submitting the button, the Glass Stack is display to the right of the
 form and the Water Level for the specified row and column is displayed at the bottom:
 
-![](readme_assets/glass-stack-display.png)
+![](readme_assets/glass-stack-display-better.png)
 
 # The Source Package Structure
 3 Simple components, namely: Form, Glass Stack, and the Glass card components were created
