@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
-import {Card, Row, Col, Container } from "react-bootstrap";
+import {Row, Col, Container } from "react-bootstrap";
 import emptyGlass from '../../images/emptyGlass.png';
 import filledGlass from '../../images/filledGlass.png';
 import less50Glass from '../../images/less50Glass.png';
@@ -75,14 +75,14 @@ const GlassStack = (props) => {
                     </div>
                     <Container>
                     {glassStack.map((row, r) => (
-                        <Row  key={r}>
+                        <Row  key={r} className={styles.center}>
                             {row.map((glass, c) => (
-                                <Col key={r+c} className='col-2' sm={2} md={2} lg={2} className={styles.nopadding}>
+                                <Col key={r+c} className='col-2' sm={2} md={2} lg={2} >
                                     {
                                         glass.waterLevel != -1 ?
                                         <Glass glassImage={glass.glassImage} waterLevel={glass.waterLevel} />
                                         :
-                                        <Card></Card>
+                                       null  
                                     }
                                     
                                 </Col>
@@ -92,7 +92,7 @@ const GlassStack = (props) => {
                     </Container>
                 </div>
                 <div className="mt-4">
-                    <h3 className="h3 mb-4 text-muted">The Glass Water Level for the Identified Row and Column is: {waterLevel} </h3>
+                    <h3 className="h3 mb-4 text-muted">The Glass Water Level for the Identified Row and Column is: <span class="badge badge-success text-md-left">{waterLevel}</span> </h3>
                     </div>
             </div>
         </>

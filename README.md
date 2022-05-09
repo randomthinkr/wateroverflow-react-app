@@ -8,12 +8,12 @@ was designed simply for the purpose of being able to run end-to-end testing of t
 
 When the page initially loads, we only see the form visible
 
-<img width="1052" alt="image" src="https://user-images.githubusercontent.com/15522344/167264668-855ee1ab-3392-4069-838e-7ef91e509e17.png">
+![](readme_assets/initial-display.png)
 
 After specifying some values for the wateroverflow simulation and submitting the button, the Glass Stack is display to the right of the
 form and the Water Level for the specified row and column is displayed at the bottom:
 
-<img width="983" alt="image" src="https://user-images.githubusercontent.com/15522344/167264767-a2591f71-4b43-4282-8a60-b111ec166179.png">
+![](readme_assets/glass-stack-display.png)
 
 # The Source Package Structure
 3 Simple components, namely: Form, Glass Stack, and the Glass card components were created
@@ -40,6 +40,5 @@ Here is the part which calls the Wateroverflow API
 3. The purpose of the application is to be able to call the two end points for the Waterflow RESTful API which can be downloaed
    and should be run prior to running this front-end application.
    The GitHub repository for the API is here -> https://github.com/randomthinkr/wateroverflow
-4. It took about an hour to try to figure out how to display the glass stack in a Pascal's Triangle, but not able to make it appear as one.
-   hence, the formation of the glasses are not according to the intent of the overflow concept. If there's more time, will revisit.
+4. Did not include validation of input values
    
