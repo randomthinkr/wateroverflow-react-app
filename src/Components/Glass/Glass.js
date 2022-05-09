@@ -7,7 +7,7 @@ const Glass = (props) => {
     return (
        
         <> 
-            <Card >
+            <Card className={styles.noborder}>
                 <Card.Img src={props.glassImage}  className={styles.imgHeight}/>
                 <Card.Body className={styles.nopadding}>
                     <Card.Text>{props.waterLevel}</Card.Text>
