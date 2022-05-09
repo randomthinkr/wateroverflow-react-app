@@ -12,4 +12,9 @@
 .center {
     margin: 20px 20px;
     justify-content: space-evenly;
+    
+ }
+
+ .noborder {
+    border: none !important;
  }

@@ -71,7 +71,7 @@ const GlassStack = (props) => {
             <div className={styles.glassStack}>
                 <div>
                     <div>
-                    <h1 className="h3 mb-4 text-muted">Glass Stack</h1>
+                    <h1 className="h1 mb-4 text-muted">Glass Stack</h1>
                     </div>
                     <Container>
                     {glassStack.map((row, r) => (
